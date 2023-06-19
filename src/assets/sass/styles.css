@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Poppins&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  background-color: #FFFFFF;
+}
+
+.navbar-brand img {
+  width: 124.27px;
+  height: 36.7px;
+}/*# sourceMappingURL=styles.css.map */
