@@ -8,8 +8,7 @@ import {
 import Logo from "../../assets/logo.png";
 
 function Navbar() {
-
-  const pages = [
+  const menu = [
     "Hakkımızda",
     "Jüri - Yarışma Yazılımı",
     "Word Ninja",
@@ -18,13 +17,13 @@ function Navbar() {
 
   return (
     <div className="overflow-hidden">
-      <nav className="navbar navbar-expand-lg my-3">
-        <div className="container-fluid px-5">
+      <nav className="navbar navbar-expand-lg my-2">
+        <div className="container">
           <a className="navbar-brand" href="#">
-            <img src={Logo} alt="Rast Mobile"/>
+            <img src={Logo} alt="Rast Mobile" />
           </a>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler shadow-none border-0"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar"
@@ -39,45 +38,48 @@ function Navbar() {
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
           >
-            <div className="offcanvas-header">
-              <h5 className="offcanvas-title">Rast Mobile</h5>
+            <div className="offcanvas-header justify-content-end">
               <button
                 type="button"
-                className="btn-close"
+                className="btn-close shadow-none"
                 data-bs-dismiss="offcanvas"
                 aria-label="Close"
               ></button>
             </div>
 
             <div className="offcanvas-body navbar-collapse">
-              <ul className="navbar-nav justify-content-around flex-grow-1">
-                {pages.map((page) => (
+              <ul className="navlink navbar-nav justify-content-evenly flex-grow-1">
+                {menu.map((page) => (
                   <li className="nav-item">
-                    <a className="nav-link text-black" href="#" style={{fontSize: 14, lineHeight: 2}}>
+                    <a
+                      className="nav-link text-black"
+                      href="#"
+                      style={{ fontSize: 14, lineHeight: 2 }}
+                    >
                       {page}
                     </a>
                   </li>
                 ))}
               </ul>
-              <ul className="navbar-nav justify-content-end pe-3">
+              <ul className="navicon navbar-nav justify-content-end">
                 <li className="nav-item my-auto">
                   <a className="nav-link" href="#">
-                    <FaYoutubeSquare style={{ color: "#744BFC" , height: 25, width: 18}} />
+                    <FaYoutubeSquare className="navbar__icon" />
                   </a>
                 </li>
                 <li className="nav-item my-auto">
                   <a className="nav-link" href="#">
-                    <FaInstagramSquare style={{ color: "#744BFC", height: 25, width: 18}} />
+                    <FaInstagramSquare className="navbar__icon" />
                   </a>
                 </li>
                 <li className="nav-item my-auto">
                   <a className="nav-link" href="#">
-                    <FaBehanceSquare style={{ color: "#744BFC", height: 25, width: 18 }} />
+                    <FaBehanceSquare className="navbar__icon" />
                   </a>
                 </li>
                 <li className="nav-item my-auto">
                   <a className="nav-link" href="#">
-                    <FaLinkedin style={{ color: "#744BFC", height: 25, width: 18 }} />
+                    <FaLinkedin className="navbar__icon" />
                   </a>
                 </li>
               </ul>

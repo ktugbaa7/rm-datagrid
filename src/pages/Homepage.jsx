@@ -4,7 +4,7 @@ import DataGrid from '../components/DataGrid/Grid'
 
 function Homepage() {
   return (
-    <div>
+    <div className="homepage">
         <Navbar />
         <DataGrid />
     </div>

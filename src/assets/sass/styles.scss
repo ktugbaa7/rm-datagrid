@@ -1,16 +1,144 @@
-.grid {
+@import "./variables";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Poppins&display=swap");
 
+* {
+  font-family: "Poppins", sans-serif;
 }
 
-@import "./variables";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Poppins&display=swap');
-*{
-    font-family: 'Poppins', sans-serif;
+// NAVBAR
+.overflow-hidden {
+  margin: auto;
+  padding: 1rem 5rem;
+}
+@media screen and (max-width: 992px) {
+  .overflow-hidden {
+    padding: 1rem 1rem;
+  }
 }
 .navbar {
-    background-color: $background-color;
-}
-.navbar-brand img {
+  background-color: $background-color;
+
+  img {
     width: 124.27px;
     height: 36.7px;
+  }
+
+  &__icon {
+    height: 25px;
+    width: 20px;
+    color: $primary-color;
+  }
+  .navbar-toggler-icon {
+    color: $primary-color;
+  }
 }
+@media screen and (max-width: 992px) {
+  .offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .navlink {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      flex-grow: 0 !important;
+    }
+    .navicon {
+      display: flex;
+      flex-direction: column;
+      flex-flow: row;
+      column-gap: 1rem;
+    }
+  }
+}
+
+// HOMEPAGE
+.homepage {
+  width: 100%;
+}
+
+// DATAGRİD
+.grid-card {
+  background-color: $table-background-color;
+  margin: 0 29px 40px;
+  border-radius: 6px;
+
+  .text-span {
+    position: relative;
+    font-size: 12px;
+    color: $primary-color;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    bottom: 56px;
+    left: 7px;
+  }
+}
+.dx-widget {
+  background-color: $table-background-color;
+
+  .dx-scrollable-scrollbar {
+    background-color: transparent;
+  }
+  .dx-toolbar {
+    margin-bottom: 0;
+  }
+
+  .dx-datagrid-search-panel {
+    padding-left: 0;
+    margin-left: 0;
+    border-radius: 39px;
+    width: 320px!important;
+
+    @media (max-width: 992px) {
+        width: 190px!important;
+    }
+
+  }
+  .dx-icon {
+    display: none;
+  }
+  .dx-dropdowneditor-icon {
+    border-radius: 39px;
+    color: $primary-color;
+
+    &::before {
+      color: $primary-color;
+    }
+  }
+  .dx-page-sizes {
+    margin-left: 55px;
+
+    .dx-selectbox {
+      border-radius: 39px !important;
+      width: 90px !important;
+      border: 1px solid #cfc0ff;
+    }
+    
+    .dx-texteditor-input-container{
+        &::after {
+            content: "rows";
+            font-size: 13px;
+        }
+    }  
+  }
+  .dx-next-button,
+  .dx-prev-button {
+      color: $primary-color;
+}
+  .dx-toolbar-after {
+    left: 0;
+    padding-left: 0;
+  }
+  .dx-datagrid-pager{
+    padding: 20px 0;
+  }
+  .dx-dropdowneditor-button.dx-state-active .dx-dropdowneditor-icon,
+  .dx-dropdowneditor.dx-dropdowneditor-active .dx-dropdowneditor-icon {
+    background-color: #cfc0ff;
+  }
+}
+
+// MODAL CSS
