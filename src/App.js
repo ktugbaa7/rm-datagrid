@@ -1,10 +1,13 @@
+import { GridProvider } from "./context/GridContext";
 import Homepage from "./pages/Homepage";
 
 function App() {
   return (
-    <div>
+    <GridProvider>
       <Homepage />
-    </div>
+    </GridProvider>
+      
+    
   );
 }
 

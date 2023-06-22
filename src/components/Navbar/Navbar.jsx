@@ -52,7 +52,7 @@ function Navbar() {
                 {menu.map((page) => (
                   <li className="nav-item">
                     <a
-                      className="nav-link text-black"
+                      className="nav-link"
                       href="#"
                       style={{ fontSize: 14, lineHeight: 2 }}
                     >

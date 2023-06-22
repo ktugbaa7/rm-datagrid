@@ -1,26 +1,26 @@
 export const data = [
   {
     
-    Link: "instagram.com/mobilerast/",
-    Name: "instagram",
-    Description: `We'll help you to finish your development project successfully.`,
+    link: "instagram.com/mobilerast/",
+    name: "instagram",
+    description: `We'll help you to finish your development project successfully.`,
   },
   {
     
-    Link: "tr.linkedin.com/company/rastmobile",
-    Name: "linkedin",
-    Description: "Hire vetted developers from Rast Mobile to scale up your tech projects",
+    link: "tr.linkedin.com/company/rastmobile",
+    name: "linkedin",
+    description: "Hire vetted developers from Rast Mobile to scale up your tech projects",
   },
   {
     
-    Link: "behance.net/rastmobile",
-    Name: "behance",
-    Description: "Software Development Agency Rast Mobile Information Technology Ltd.",
+    link: "behance.net/rastmobile",
+    name: "behance",
+    description: "Software Development Agency Rast Mobile Information Technology Ltd.",
   },
   {
     
-    Link: "twitter.com/rastmobile",
-    Name: "twitter ",
-    Description: "Software Development Agency Rast Mobile Information Technology Ltd.",
+    link: "twitter.com/rastmobile",
+    name: "twitter ",
+    description: "Software Development Agency Rast Mobile Information Technology Ltd.",
   },
 ];

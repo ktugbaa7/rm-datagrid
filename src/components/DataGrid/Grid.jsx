@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { CiSearch } from "react-icons/ci";
-import { HiFilter, HiPlus } from "react-icons/hi";
-
 import {
   DataGrid,
   Column,
@@ -10,49 +7,34 @@ import {
   Paging,
   Pager,
   RequiredRule,
+  Sorting
 } from "devextreme-react/data-grid";
 import "devextreme/dist/css/dx.common.css";
 import "devextreme/dist/css/dx.light.css";
 import { data } from "../../util/data";
 import { Button, Container } from "react-bootstrap";
 import AccountModal from "../Modal/AccountModal";
+import { CiSearch } from "react-icons/ci";
+import { HiFilter, HiPlus } from "react-icons/hi";
+import { useDataGrid } from "../../context/GridContext";
 
 function Grid() {
-  const [dataItem, setDataItem] = useState([]);
-
-  // useEffect(() => {
-  //   const storedData = localStorage.getItem("gridData");
-  //   if (storedData) {
-  //     setDataItem(JSON.parse(storedData));
-  //   } else {
-  //     setDataItem(data);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem("gridData", JSON.stringify(data));
-  // }, [dataItem]);
+  
+  const {show, handleClose, handleShow, newData} = useDataGrid();
 
   const columns = [
-    { dataField: "Link", caption: "Sosyal Medya Linki" },
-    { dataField: "Name", caption: "Sosyal Medya Adı" },
-    { dataField: "Description", caption: "Açıklama" },
+    { dataField: "link", caption: "Sosyal Medya Linki", width: 370 },
+    { dataField: "name", caption: "Sosyal Medya Adı", width: 320},
+    { dataField: "description", caption: "Açıklama" },
   ];
-  
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   return (
     <div className="grid-card">
       <Container>
-        <div className="gridbar" style={{ backgroundColor: "yellow", }}>
+        <div className="gridbar">
           <div className="gridbar__search">
             <CiSearch className="gridbar__search-icon" />
-            <button>
-              <HiFilter className="gridbar__filt-icon" />
-            </button>
+            <HiFilter className="gridbar__filt-icon" />
           </div>
           <Button
             variant="primary"
@@ -60,28 +42,40 @@ function Grid() {
             onClick={handleShow}
             className="gridbar__add-button"
           >
-            <HiPlus /> Yeni Hesap Ekle
+            <HiPlus style={{ fontSize: 18 }} /> Yeni Hesap Ekle
+          </Button>{" "}
+          <Button
+            variant="primary"
+            type="submit"
+            onClick={handleShow}
+            className="gridbar__btn"
+          >
+            <HiPlus style={{ fontSize: 18 }} />
           </Button>{" "}
         </div>
 
         <AccountModal show={show} handleClose={handleClose} />
-        
+
         <DataGrid
-          id="dataGrid"
-          dataSource={data}
+          id="gridData"
+          dataSource={newData}
           showBorders={true}
           columnAutoWidth={true}
-          remoteOperations={true}
           rowAlternationEnabled={true}
           allowColumnReordering={true}
+          allowColumnResizing={true}
+          showAllText="All"
+          showColumnLines={true}
           columns={columns}
         >
-          <SearchPanel
+          <SearchPanel  rawData={newData} visible={true} placeholder="Search objects..." />
+
+          <Column
+            dataField="link"
+            caption={"Sosyal Medya Linki"}
+            allowSorting={true}
             visible={true}
-            placeholder="Search objects..."
-          />
-          {/* buradaki columsları silebiliriz yeni hesap ekleme işlemini yap kontrol et*/}
-          <Column dataField="link" caption={"Sosyal Medya Linki"}>
+          >
             {" "}
             <RequiredRule />
             {""}
@@ -96,13 +90,15 @@ function Grid() {
           </Column>
           <Scrolling rowRenderingMode="virtual" />
           {/* Enable paging with default page size */}
-          <Paging defaultPageSize={6} defaultPageIndex={0} />
+          <Paging defaultPageSize={10}  />
+          <Sorting mode="multiple" />
           {/* Render pager component */}
           <Pager
             visible={true}
-            allowedPageSizes={[2, 4, 6, 8, "all"]}
-            displayMode={"compact"}
+            allowedPageSizes={[4, 8, 10, "all"]}
+            displayMode="compact"
             showPageSizeSelector={true}
+            showInfo={false}
             showNavigationButtons={true}
           />
         </DataGrid>
