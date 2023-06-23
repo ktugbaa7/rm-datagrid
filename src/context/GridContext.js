@@ -7,18 +7,19 @@ const DataGridContext = createContext();
 
 export const GridProvider = ({ children }) => {
   const [newData, setNewData] = useState([]);
-  
 
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false); //modal gizle/göster
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  // interface
   const initialValues = {
     link: "",
     name: "",
     description: "",
   };
 
+  // zorunlu alan doğrulama
   const validationSchema = Yup.object({
     link: Yup.string()
     .matches(
@@ -30,23 +31,31 @@ export const GridProvider = ({ children }) => {
     description: Yup.string().required("Lütfen açıklama giriniz."),
   });
 
-  const onSubmit = (values) => {
+  const onSubmit =  (values) => {
     
-    setNewData((prevData) => [prevData, values])
-    formik.resetForm();
-
+    //setNewData((prevData) => [...prevData, values])
+     //var olan verinin üzerine ekle
+    const prevData = [...newData, values];
+    setNewData(prevData);
+    localStorage.setItem("localData", JSON.stringify(prevData));
+    formik.resetForm(initialValues);
+  
   }
 
-
-  const formik = useFormik({
+  const formik = useFormik( {
     initialValues,
     validationSchema,
     onSubmit,
   })
   
   useEffect(() => {
-   
-  }, []);
+   const localData = JSON.parse(localStorage.getItem("localData"));
+   if(localData) {
+    setNewData(localData);
+   }else{
+    setNewData(data)
+   }
+  }, []); //updateData
 
   const values = {
     show,
