@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   DataGrid,
   Column,
@@ -11,7 +11,6 @@ import {
 } from "devextreme-react/data-grid";
 import "devextreme/dist/css/dx.common.css";
 import "devextreme/dist/css/dx.light.css";
-import { data } from "../../util/data";
 import { Button, Container } from "react-bootstrap";
 import AccountModal from "../Modal/AccountModal";
 import { CiSearch } from "react-icons/ci";
