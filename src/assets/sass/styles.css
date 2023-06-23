@@ -220,15 +220,11 @@
 .dx-widget .dx-dropdowneditor.dx-dropdowneditor-active .dx-dropdowneditor-icon {
   background-color: #cfc0ff;
 }
-.dx-widget .dx-datagrid-headers {
-  border-radius: 8px 8px 0 0;
-}
 .dx-widget .dx-datagrid-headers.dx-datagrid-nowrap {
   border-bottom: none;
 }
 .dx-widget .dx-datagrid-rowsview {
   border-top: none;
-  border-radius: 0 0 8px 8px;
 }
 .dx-widget .dx-datagrid-action.dx-cell-focus-disabled.dx-datagrid-drag-action {
   padding: 22px 15px;
