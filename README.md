@@ -1,6 +1,6 @@
 # Rast Mobile React DataGrid Task
 
-Rast Mobile Şirketi için React ile geliştirilen bu projede kullanıcı bilgilerini bir modal aracılığıyla girebiliyor, DataGrid tablosuna ekliyor ve bu bilgiyi lokalinde tutabiliyor.
+Rast Mobile Şirketi için React ile geliştirilen bu projede kullanıcı bilgilerini bir modal aracılığıyla girebiliyor, DataGrid tablosuna ekliyor ve bu bilgileri lokalinde tutabiliyor.
 
 
 ## Bilgisayarınızda Çalıştırın
