@@ -1,6 +1,6 @@
-# Rast Mobile React DataGrid Task
+#  React DataGrid
 
-Rast Mobile Şirketi için React ile geliştirilen bu projede kullanıcı bilgilerini bir modal aracılığıyla girebiliyor, DataGrid tablosuna ekliyor ve bu bilgileri lokalinde tutabiliyor.
+React ile geliştirilen bu projede kullanıcı bilgilerini bir modal aracılığıyla girebiliyor, DataGrid tablosuna ekliyor ve bu bilgileri lokalinde tutabiliyor.
 
 
 ## Bilgisayarınızda Çalıştırın
@@ -34,9 +34,6 @@ React, ContextApi, Devextreme React, React Bootstrap, Bootstrap, Formik, Yup, Re
 
 ## Proje Hakkında
 
-Projede DataGrid yapısı odaklı çalışılmıştır. Figma üzerindeki tasarım baz alınmıştır ve responsive tasarıma uygun tasarlanmıştır. Yapılar birden çok componentlere ayrılıp parçadan bütüne gidilerek dizayn edilmiştir.
+Projede DataGrid yapısı odaklı çalışılmıştır. Responsive tasarıma uygun tasarlanmıştır. Yapılar birden çok componentlere ayrılıp parçadan bütüne gidilerek dizayn edilmiştir.
 Kullanıcının eklediği bilgiler lokalinde saklanabilmektedir.
 
-## Ekran Görüntüleri
-<img src="https://raw.githubusercontent.com/ktugbaa7/rm-datagrid/master/Ads%C4%B1z1.png" width="auto">
-<img src="https://github.com/ktugbaa7/rm-datagrid/blob/master/Ads%C4%B1z2.png" width="auto">
